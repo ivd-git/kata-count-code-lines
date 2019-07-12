@@ -1,11 +1,14 @@
 package com.philips.kata;
 
+import java.util.Arrays;
+
 public class CodeCounter {
-    public int countLines(String code) {
+    public long countLines(String code) {
         if (code.isEmpty()) {
             return 0;
         } else {
-            return code.split("\\n").length;
+             String[] lines = code.split("\\n");
+             return Arrays.stream(lines).filter(l -> !l.isEmpty()).count();
         }
     }
 }

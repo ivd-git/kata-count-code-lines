@@ -24,6 +24,14 @@ public class CodeCounterTest {
                 "private int y = 1;");
     }
 
+    @Test
+    public void twoLinesOfCodeEmptyLineIgnored() {
+        assertLinesOfCode(2,
+                "private int x = 0;\n" +
+                        "\n" +
+                        "private int y = 1;");
+    }
+
     private void assertLinesOfCode(int expectedLinesOfCode, String code) {
         assertEquals(expectedLinesOfCode, counter.countLines(code));
     }

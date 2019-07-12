@@ -4,23 +4,27 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CodeCounterTest {
+
+    private CodeCounter counter = new CodeCounter();
+
     @Test
     public void emptyFileHasZeroLinesOfCode() {
-        CodeCounter counter = new CodeCounter();
-        assertEquals(0, counter.countLines(""));
+        assertLinesOfCode(0, "");
     }
 
     @Test
     public void singleLineOfCode() {
-        CodeCounter counter = new CodeCounter();
-        assertEquals(1, counter.countLines("private int x = 0;"));
+        assertLinesOfCode(1, "private int x = 0;");
     }
 
     @Test
-    public void twoLineOfCode() {
-        CodeCounter counter = new CodeCounter();
-        assertEquals(2, counter.countLines(
+    public void twoLinesOfCode() {
+        assertLinesOfCode(2,
                 "private int x = 0;\n" +
-                        "private int y = 1;"));
+                "private int y = 1;");
+    }
+
+    private void assertLinesOfCode(int expectedLinesOfCode, String code) {
+        assertEquals(expectedLinesOfCode, counter.countLines(code));
     }
 }

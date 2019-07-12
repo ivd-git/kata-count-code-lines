@@ -5,7 +5,7 @@ public class CodeCounter {
         if (code.isEmpty()) {
             return 0;
         } else {
-            return 1;
+            return code.split("\\n").length;
         }
     }
 }

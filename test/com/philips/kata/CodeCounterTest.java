@@ -9,4 +9,10 @@ public class CodeCounterTest {
         CodeCounter counter = new CodeCounter();
         assertEquals(0, counter.countLines(""));
     }
+
+    @Test
+    public void singleLineOfCode() {
+        CodeCounter counter = new CodeCounter();
+        assertEquals(1, counter.countLines("private int x = 0;"));
+    }
 }

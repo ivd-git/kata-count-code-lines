@@ -42,6 +42,11 @@ public class CodeCounterTest {
         assertLinesOfCode(0, "    //hi");
     }
 
+    @Test
+    public void multiLineCommentReturnsZero() {
+        assertLinesOfCode(0, "/*");
+    }
+
     private void assertLinesOfCode(int expectedLinesOfCode, String code) {
         assertEquals(expectedLinesOfCode, counter.countLines(code));
     }

@@ -32,6 +32,11 @@ public class CodeCounterTest {
                         "private int y = 1;");
     }
 
+    @Test
+    public void singleCommentLineReturnsZero() {
+        assertLinesOfCode(0, "//hi");
+    }
+
     private void assertLinesOfCode(int expectedLinesOfCode, String code) {
         assertEquals(expectedLinesOfCode, counter.countLines(code));
     }

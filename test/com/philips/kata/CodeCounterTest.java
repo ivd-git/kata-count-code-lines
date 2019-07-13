@@ -53,6 +53,12 @@ public class CodeCounterTest {
                 "private int x = 0;");
     }
 
+    @Test
+    public void multiLineCommentFollowedByLineOfCodeReturnsZero() {
+        assertLinesOfCode(0, "/*\n" +
+                "private int x = 0;");
+    }
+
     private void assertLinesOfCode(int expectedLinesOfCode, String code) {
         assertEquals(expectedLinesOfCode, counter.countLines(code));
     }

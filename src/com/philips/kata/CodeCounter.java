@@ -4,10 +4,6 @@ import java.util.Arrays;
 
 public class CodeCounter {
     public long countLines(String code) {
-        if (code.isEmpty()) {
-            return 0;
-        }
-
         String[] lines = code.split("\\n");
         return Arrays.stream(lines)
                 .map(String::trim)

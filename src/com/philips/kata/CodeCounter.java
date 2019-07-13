@@ -18,7 +18,6 @@ public class CodeCounter {
     }
 
     private Predicate<String> multiLineComments() {
-
         return l -> {
             if (!insideMultiLineComment) {
                 insideMultiLineComment = l.startsWith("/*");

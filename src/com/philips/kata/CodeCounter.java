@@ -21,6 +21,9 @@ public class CodeCounter {
         return l -> {
             if (!insideMultiLineComment) {
                 insideMultiLineComment = l.startsWith("/*");
+            } else {
+                insideMultiLineComment = !l.startsWith("*/");
+                return false;
             }
             return !insideMultiLineComment;
         };

@@ -48,8 +48,8 @@ public class CodeCounterTest {
     }
 
     @Test
-    public void multiLineCommentFollowedByCodeReturnsOne() {
-        assertLinesOfCode(1, "/*" +
+    public void multiLineCommentFollowedByCodeReturnsZero() {
+        assertLinesOfCode(0, "/*" +
                 "private int x = 0;");
     }
 

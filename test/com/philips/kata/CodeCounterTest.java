@@ -59,6 +59,13 @@ public class CodeCounterTest {
                 "private int x = 0;");
     }
 
+    @Test
+    public void closedMultiLineCommontFollowedByCodeReturnsOne() {
+        assertLinesOfCode(1, "/*\n" +
+                "*/\n" +
+                "private int x = 0;");
+    }
+
     private void assertLinesOfCode(int expectedLinesOfCode, String code) {
         assertEquals(expectedLinesOfCode, counter.countLines(code));
     }
